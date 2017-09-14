@@ -3,9 +3,9 @@
  *
  */
 // назавние главного класса, обычно совпадает с названием программы
-public class HelloWorld {
+public class GoodbyeWorld {
   public static void main (String args[]) {
-    String helloMessage = "Hello World!";
+    String helloMessage = "Goodbye World!";
     System.out.println(helloMessage);
   }
 }
