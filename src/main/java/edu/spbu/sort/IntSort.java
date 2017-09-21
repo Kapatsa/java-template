@@ -12,10 +12,22 @@ public class IntSort {
       array[j] = temp;
   }
 
-  public static void sort (int array[]) {
+    public static void sort (int array[]) {
 
-      int first = 0;
-      int last = array.length - 1;
+        if (array ==null || array.length==0){
+            return;
+        }
+        int r = array.length - 1;
+        quicksort(0, r, array);
+    }
+
+  public static void quicksort (int first, int last, int array[]) {
+
+      if ( first >= last )
+      {
+          return;
+      }
+
       int pivot = array[first + (last - first)/2];
       int i = first, j = last;
       //Divide into two sets
@@ -29,18 +41,20 @@ public class IntSort {
           //Swapping the elements
           if (i <= j) {
               swap(array, i, j);
-              i++;
-              j--;
+              ++i;
+              --j;
           }
       }
       //Using recursion here
-      if (first < j)
-          sort(Arrays.copyOfRange(array, first, j));
+      if (first < j) {
+          quicksort(first, j, array);
+      }
 
-      if (i < last);
-          sort(Arrays.copyOfRange(array, i, last));
-
+      if (i < last) {
+          quicksort(i, last, array);
+      }
   }
+
 
 
   public static void sort (List<Integer> list) {
