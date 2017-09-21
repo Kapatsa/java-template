@@ -14,15 +14,8 @@ public class IntSort {
 
   public static void sort (int array[]) {
 
-      if (array == null || array.length == 0) {
-          return;
-      }
-
-          int first = 0;
-          int last = array.length - 1;
-
-
-
+      int first = 0;
+      int last = array.length - 1;
       int pivot = array[first + (last - first)/2];
       int i = first, j = last;
       //Divide into two sets
@@ -34,10 +27,10 @@ public class IntSort {
               --j;
           }
           //Swapping the elements
-          if (array[i] <= array[j]) {
+          if (i <= j) {
               swap(array, i, j);
               i++;
-              j++;
+              j--;
           }
       }
       //Using recursion here
